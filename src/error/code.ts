@@ -1,0 +1,18 @@
+export const ERROR_CODE = {
+  // Server-intended errors
+  VALIDATION: "VALIDATION",
+  AUTH_REQUIRED: "AUTH_REQUIRED",
+  FORBIDDEN: "FORBIDDEN",
+  NOT_FOUND: "NOT_FOUND",
+  RATE_LIMITED: "RATE_LIMITED",
+
+  // Client boundaries
+  NETWORK_ERROR: "NETWORK_ERROR",
+  TIMEOUT_ERROR: "TIMEOUT_ERROR",
+
+  // Final catch-alls
+  INTERNAL_SERVER_ERROR: "INTERNAL_SERVER_ERROR",
+  UNKNOWN_CLIENT_ERROR: "UNKNOWN_CLIENT_ERROR",
+} as const;
+
+export type ErrorCode = keyof typeof ERROR_CODE;

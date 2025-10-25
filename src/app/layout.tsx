@@ -1,3 +1,4 @@
+import { BrowserBoundary } from "@/components/BrowserBoundary";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -27,6 +28,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <BrowserBoundary />
+        <nav className="mx-auto flex max-w-3xl gap-4 p-4 text-sm">
+          <a className="text-blue-600 underline" href="/">
+            Home
+          </a>
+          <a className="text-blue-600 underline" href="/sign-in">
+            Sign In
+          </a>
+          <a className="text-blue-600 underline" href="/users">
+            Users
+          </a>
+          <a className="text-blue-600 underline" href="/users/2">
+            User 2 (render error demo)
+          </a>
+        </nav>
         {children}
       </body>
     </html>

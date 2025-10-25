@@ -34,3 +34,32 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+---
+
+## Error Handling Strategy Demo
+
+This project includes an end-to-end example implementing the articles:
+
+- Single error model `DomainError`
+- Central `handleError` processor
+- Five boundaries: server, network, interaction, rendering, browser
+
+Key files:
+
+- Core: `src/error/*`
+- Server Actions: `src/app/actions/auth.ts`
+- API Routes: `src/app/api/users/*`
+- Client Boundaries: `src/components/BrowserBoundary.tsx`, `src/components/ErrorBoundary.tsx`
+
+Demo pages:
+
+- `/sign-in` – Interaction boundary with `safeServerAction`
+- `/users` – Server component fetching with `error.tsx` route boundary
+- `/users/[userId]` – Client fetch via `networkBoundary` + render boundary
+
+Setup:
+
+1. Install deps: `pnpm install` (or `npm i`)
+2. Start dev: `pnpm dev`
+3. (Optional) set `NEXT_PUBLIC_BASE_URL=http://localhost:3000` for server component fetch base
