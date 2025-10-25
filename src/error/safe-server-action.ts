@@ -1,5 +1,3 @@
-"use server";
-
 import { z } from "zod";
 import { ERROR_CODE } from "./code";
 import { isDomainError } from "./domain-error";
